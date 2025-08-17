@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1jgq1bi0x656"]
+
+[ext_resource type="Texture2D" uid="uid://dltjwej8xasw5" path="res://ui/Back.png" id="1_ks8t7"]
+[ext_resource type="Script" uid="uid://cdf77l1euiyyu" path="res://ui/ui.gd" id="1_vkava"]
+[ext_resource type="Texture2D" uid="uid://u1xmx4tra37x" path="res://ui/Restart.png" id="2_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://brxfrakb7uc4r" path="res://ui/Play.png" id="3_wl5ax"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_vkava")
+
+[node name="Close" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_ks8t7")
+texture_pressed = ExtResource("1_ks8t7")
+texture_hover = ExtResource("1_ks8t7")
+texture_disabled = ExtResource("1_ks8t7")
+texture_focused = ExtResource("1_ks8t7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Restart" type="TextureButton" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture_normal = ExtResource("2_wl5ax")
+texture_pressed = ExtResource("2_wl5ax")
+texture_hover = ExtResource("2_wl5ax")
+texture_disabled = ExtResource("2_wl5ax")
+texture_focused = ExtResource("2_wl5ax")
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left" type="TouchScreenButton" parent="Control"]
+position = Vector2(84, 286)
+scale = Vector2(-2.5, 2.5)
+texture_normal = ExtResource("3_wl5ax")
+texture_pressed = ExtResource("3_wl5ax")
+action = "ui_left"
+
+[node name="right" type="TouchScreenButton" parent="Control"]
+position = Vector2(112, 286)
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("3_wl5ax")
+texture_pressed = ExtResource("3_wl5ax")
+action = "ui_right"
+
+[node name="jump" type="TouchScreenButton" parent="Control"]
+position = Vector2(522, 315)
+rotation = 4.71239
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("3_wl5ax")
+texture_pressed = ExtResource("3_wl5ax")
+action = "ui_accept"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

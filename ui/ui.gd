@@ -11,7 +11,7 @@ var os_name: String:
 			var agent = JavaScriptBridge.eval("navigator.userAgent")
 			if agent != null and typeof(agent) == TYPE_STRING:
 				var ua = agent.to_lower()
-				if "android" in ua or "iphone" in ua or "ios":
+				if "android" in ua or "iphone" in ua or "ios" in ua:
 					aux = "Mobile"
 		return aux
 

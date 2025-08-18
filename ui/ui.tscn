@@ -8,32 +8,6 @@
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_vkava")
 
-[node name="Close" type="TextureButton" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("1_ks8t7")
-texture_pressed = ExtResource("1_ks8t7")
-texture_hover = ExtResource("1_ks8t7")
-texture_disabled = ExtResource("1_ks8t7")
-texture_focused = ExtResource("1_ks8t7")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Restart" type="TextureButton" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
-grow_horizontal = 2
-texture_normal = ExtResource("2_wl5ax")
-texture_pressed = ExtResource("2_wl5ax")
-texture_hover = ExtResource("2_wl5ax")
-texture_disabled = ExtResource("2_wl5ax")
-texture_focused = ExtResource("2_wl5ax")
-stretch_mode = 5
-
 [node name="Control" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -64,6 +38,32 @@ scale = Vector2(2.5, 2.5)
 texture_normal = ExtResource("3_wl5ax")
 texture_pressed = ExtResource("3_wl5ax")
 action = "ui_accept"
+
+[node name="Close" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_ks8t7")
+texture_pressed = ExtResource("1_ks8t7")
+texture_hover = ExtResource("1_ks8t7")
+texture_disabled = ExtResource("1_ks8t7")
+texture_focused = ExtResource("1_ks8t7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Restart" type="TextureButton" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture_normal = ExtResource("2_wl5ax")
+texture_pressed = ExtResource("2_wl5ax")
+texture_hover = ExtResource("2_wl5ax")
+texture_disabled = ExtResource("2_wl5ax")
+texture_focused = ExtResource("2_wl5ax")
+stretch_mode = 5
 
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
